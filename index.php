@@ -113,7 +113,7 @@
         </a>
 
         
-        <a href="jenis.php" class="topic-card">
+        <a href="pengertian.php" class="topic-card">
             <div class="topic-icon">💡</div>
             <h3>Pengertian</h3>
             <p>Definisi dan karakteristik badai serta topan</p>
