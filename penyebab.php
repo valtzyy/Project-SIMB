@@ -69,44 +69,40 @@
   <div class="cards">
 
     <div class="card">
-      <h3>Suhu Permukaan</h3>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit ad deleniti, perspiciatis cumque sed labore rerum cupiditate assumenda minima obcaecati, quos cum optio incidunt non! Qui totam nihil ratione. Perferendis.
-      </p>
+      <h3>Perubahan Tekanan Udara</h3>
+      <p>Badai sering terjadi ketika terjadi perbedaan tekanan udara yang signifikan antara dua wilayah. Udara dari daerah bertekanan tinggi bergerak cepat menuju daerah bertekanan rendah, menciptakan angin kencang dan pusaran. Ketika perbedaan tekanan ini sangat besar, angin menjadi semakin kuat dan membentuk badai      </p>
     </div>
 
     <div class="card">
-      <h3>Atmosfer yang Tidak Stabil</h3>
+      <h3>Pemanasan Permukaan Laut</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium provident at corrupti vel veritatis autem, omnis accusamus quod saepe officiis, eaque tenetur eligendi dolorum incidunt beatae. Consequatur et veniam ad!
+        Temperatur permukaan laut yang tinggi (biasanya ≥26,5°C) menyebabkan penguapan air laut meningkat. Uap air yang naik ke atmosfer akan mengembun, melepas energi panas (latent heat), dan memperkuat sistem tekanan rendah yang kemudian dapat berkembang menjadi badai tropis atau bahkan topan. Semakin hangat lautan, semakin besar potensi badai terjadi.
       </p>
     </div>
 
     <div class="card">
       <h3>Kelembapan Tinggi</h3>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab soluta neque cum suscipit sapiente voluptates nesciunt, aliquam distinctio exercitationem accusamus quaerat modi alias delectus, nobis fuga, deserunt tempora facilis ut!
-      </p>
+      <p>Udara yang kaya uap air memberikan energi tambahan bagi pembentukan awan badai (cumulonimbus). Ketika uap air dalam jumlah besar naik dan mengembun pada lapisan atmosfer, proses ini dapat memicu hujan lebat, kilat, dan angin kencang. Kelembapan tinggi di atmosfer rendah hingga menengah memperkuat sistem badai.</p>
     </div>
 
     <div class="card">
       <h3>Gaya Coriolis yang Cukup</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aspernatur vitae consequatur debitis expedita tempora odio deserunt nostrum libero explicabo qui animi, alias magni, modi eius commodi ipsa exercitationem incidunt?
+        Rotasi bumi menyebabkan angin bergerak melengkung saat menuju daerah bertekanan rendah, membentuk pusaran badai. Di belahan bumi utara pusaran berlawanan arah jarum jam, sedangkan di selatan searah jarum jam. Tanpa efek Coriolis, badai tropis tidak akan terbentuk. Karena itu badai tidak terjadi tepat di garis khatulistiwa.
       </p>
     </div>
 
     <div class="card">
       <h3>Gangguan Atmosfer</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit laborum dolores architecto aliquid pariatur iure, reiciendis necessitatibus enim est neque quae. Ratione deleniti delectus, corrupti dignissimos quidem deserunt natus consequatur?
+        Jika suhu permukaan bumi sangat panas sementara lapisan udara di atasnya lebih dingin, terjadi ketidakstabilan atmosfer. Udara hangat cepat naik ke atas dan bertemu dengan udara dingin, menyebabkan turbulensi dan dapat memicu badai petir, bahkan tornado jika kondisi mendukung.
       </p>
     </div>
 
     <div class="card">
-      <h3>Geseran Angin</h3>
+      <h3>Angin Lapis Atmosfer(Wind Shear)</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio velit aliquid possimus voluptatum distinctio assumenda blanditiis earum, incidunt, illum, expedita sit nulla aperiam saepe neque debitis iusto! Porro, eum tempore!
+        Dalam meteorologi, "wind shear" adalah perubahan arah atau kecepatan angin pada ketinggian berbeda. Wind shear yang tepat dapat membantu badai berkembang dengan membentuk rotasi vertikal pada massa udara. Namun jika terlalu kuat, justru bisa merusak struktur badai. Di wilayah tropis, wind shear moderat mendukung pembentukan badai.
     </div>
 
   </div>
