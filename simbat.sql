@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2025 at 03:26 PM
+-- Generation Time: Nov 24, 2025 at 05:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -66,10 +66,11 @@ CREATE TABLE `kategori_topan` (
 --
 
 INSERT INTO `kategori_topan` (`id`, `kategori`, `jumlah`) VALUES
-(1, 'Depresi Tropis', 22),
-(2, 'Badai Tropis', 28),
-(3, 'Topan Kategori 1-2', 19),
-(4, 'Topan Kategori 3-5', 15);
+(1, 'Kecepatan 74-95 mil per jam', 26),
+(2, 'Kecepatan 96-110 mil per jam', 22),
+(3, 'Kecepatan 111-129 mil per jam', 17),
+(4, 'Kecepatan 130-156 mil per jam', 12),
+(5, 'Kecepatan di atas 157 mil per jam', 7);
 
 -- --------------------------------------------------------
 
@@ -104,16 +105,21 @@ CREATE TABLE `riwayat_topan` (
 --
 
 INSERT INTO `riwayat_topan` (`id`, `nama`, `tahun`, `kategori`, `dampak`) VALUES
-(1, 'Topan Kirana', 2014, 'Badai Tropis', 'Banjir pesisir & angin kencang'),
-(2, 'Topan Samudra', 2015, 'Depresi Tropis', 'Kerusakan ringan & hujan ekstrem'),
-(3, 'Topan Rinjani', 2016, 'Topan Kategori 2', 'Rusak 900 rumah, 30 korban'),
-(4, 'Topan Nusa', 2017, 'Topan Kategori 3', 'Putus akses jalan & listrik 3 hari'),
-(5, 'Topan Harimau', 2018, 'Topan Kategori 4', '2100 rumah rusak & korban signifikan'),
-(6, 'Topan Lestari', 2019, 'Badai Tropis', 'Longsor di daerah pegunungan'),
-(7, 'Topan Mawar', 2020, 'Topan Kategori 5', 'Kerugian besar & evakuasi massal'),
-(8, 'Topan Intan', 2021, 'Topan Kategori 3', 'Gelombang tinggi & banjir bandang'),
-(9, 'Topan Sejati', 2022, 'Depresi Tropis', 'Dampak ringan, hujan lokal'),
-(10, 'Topan Garuda', 2023, 'Badai Tropis', 'Kerusakan infrastruktur ringan');
+(1, 'Great Galveston', 1900, 'Kategori 4', 'Bencana alam paling mematikan dalam sejarah AS (8.000+ tewas).'),
+(2, 'Labor Day', 1935, 'Kategori 5', 'Badai pertama kategori 5 yang tercatat mendarat di AS; menyapu bersih Florida Keys.'),
+(3, 'Camille', 1969, 'Kategori 5', 'Kehancuran total di pesisir Mississippi; kecepatan angin diperkirakan 175 mph (280 km/h).'),
+(4, 'Bhola Cyclone', 1970, 'Setara Kategori 3/4', 'Siklon paling mematikan di dunia (Bangladesh), menewaskan 300.000-500.000 jiwa.'),
+(5, 'Tip', 1979, 'Setara Kategori 5', 'Siklon tropis terbesar dan terkuat secara fisik yang pernah tercatat di Pasifik Barat.'),
+(6, 'Andrew', 1992, 'Kategori 5', 'Menghancurkan lebih dari 63.000 rumah di Florida Selatan; kerugian ekonomi sangat masif.'),
+(7, 'Mitch', 1998, 'Kategori 5', 'Curah hujan ekstrem menyebabkan tanah longsor fatal di Honduras dan Nikaragua (11.000+ tewas).'),
+(8, 'Katrina', 2005, 'Kategori 3', 'Jebolnya tanggul di New Orleans menyebabkan banjir kota yang parah dan krisis kemanusiaan.'),
+(9, 'Nargis', 2008, 'Setara Kategori 4', 'Menyebabkan gelombang badai dahsyat di Myanmar, menewaskan lebih dari 138.000 orang.'),
+(10, 'Sandy', 2012, 'Kategori 3', 'Superstorm yang melumpuhkan New York City dan pesisir timur AS dengan banjir rob.'),
+(11, 'Haiyan (Yolanda)', 2013, 'Setara Kategori 5', 'Salah satu badai terkuat saat menyentuh daratan (Filipina); angin berkelanjutan 195 mph.'),
+(12, 'Patricia', 2015, 'Kategori 5', 'Angin berkelanjutan tertinggi yang pernah diukur secara langsung (215 mph) di Pasifik Timur.'),
+(13, 'Harvey', 2017, 'Kategori 4', 'Badai dengan curah hujan tertinggi dalam sejarah AS, menenggelamkan wilayah Houston, Texas.'),
+(14, 'Maria', 2017, 'Kategori 5', 'Menghancurkan infrastruktur listrik di seluruh pulau Puerto Rico; krisis pemulihan bertahun-tahun.'),
+(15, 'Dorian', 2019, 'Kategori 5', 'Berhenti (stalling) di atas Bahama selama berhari-hari dengan kekuatan penuh menyebabkan kehancuran total.');
 
 -- --------------------------------------------------------
 
@@ -134,7 +140,7 @@ CREATE TABLE `statistik_umum` (
 --
 
 INSERT INTO `statistik_umum` (`id`, `total_topan`, `korban_jiwa`, `infrastruktur_rusak`, `kerugian_usd`) VALUES
-(1, 84, 12430, 18520, 4700000000);
+(1, 860, 53357, 7214000, 91200000000);
 
 --
 -- Indexes for dumped tables
@@ -184,7 +190,7 @@ ALTER TABLE `frekuensi_tahunan`
 -- AUTO_INCREMENT for table `kategori_topan`
 --
 ALTER TABLE `kategori_topan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `lokasi_bencana`
@@ -196,7 +202,7 @@ ALTER TABLE `lokasi_bencana`
 -- AUTO_INCREMENT for table `riwayat_topan`
 --
 ALTER TABLE `riwayat_topan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `statistik_umum`
