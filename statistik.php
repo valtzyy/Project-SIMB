@@ -166,7 +166,7 @@ while($row=mysqli_fetch_assoc($history)){
         </div>
 
         <div class="panel fade-up" style="margin-top:18px;">
-          <h3>Riwayat Topan (Contoh)</h3>
+          <h3>Riwayat Topan</h3>
           <table>
             <thead>
               <tr><th>Nama</th><th>Tahun</th><th>Kategori</th><th>Dampak</th></tr>
