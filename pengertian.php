@@ -62,34 +62,30 @@
 
 
     <!-- KONTENN -->
-    <section class="section-kontak" id="kontak">
-    <div class="kontak-inner" style="align-content: center;">
-      <div>
-        <h2>Definisi Bencana Angin</h2>
-        <p>
-          Bencana angin adalah peristiwa hidrometeorologis
-          berupa angin kencang yang memiliki kecepatan sangat
-          tinggi dan dapat menyebabkan kerusakan besar pada
-          bangunan, tumbuhan serta membahayakan
-          keselamatan manusia. Angin ini biasanya terjadi
-          karena adanya tekanan udara yang membentuk
-          pusaran dalam sistem cuaca, sering terjadi di masa
-          peralihan musim atau di wilayah tropis tertentu.
-        </p>
+  <section class="section-kontak" id="kontak">
+  <div class="kontak-inner">
 
-        <h2>Definisi Badai</h2>
-        <p>
-          Secara ilmiah, badai (storm dalam bahasa Inggris, Latin modern: tempestas)
-          adalah fenomena atmosfer yang ditandai dengan kondisi cuaca ekstrem berupa
-          hembusan angin kencang, curah hujan deras, petir, salju, atau kombinasi dari
-          unsur-unsur tersebut. Badai terbentuk karena adanya perbedaan tekanan udara
-          yang besar dalam suatu wilayah sehingga menimbulkan aliran angin kuat dan
-          gangguan cuaca.
-        </p>
-      </div>
-      </div>
+    <div class="definition-card">
+      <h2>Definisi Bencana Angin</h2>
+      <p>
+        Bencana angin adalah peristiwa hidrometeorologis berupa angin kencang yang memiliki kecepatan sangat tinggi 
+        dan dapat menyebabkan kerusakan besar pada bangunan, tumbuhan serta membahayakan keselamatan manusia. 
+        Angin ini biasanya terjadi karena adanya tekanan udara yang membentuk pusaran dalam sistem cuaca, sering 
+        terjadi di masa peralihan musim atau di wilayah tropis tertentu.
+      </p>
     </div>
   </section>
+      <h2>Definisi Badai</h2>
+      <p>
+        Secara ilmiah, badai (storm dalam bahasa Inggris, Latin modern: tempestas) adalah fenomena atmosfer yang 
+        ditandai dengan kondisi cuaca ekstrem berupa hembusan angin kencang, curah hujan deras, petir, salju, atau 
+        kombinasi dari unsur-unsur tersebut. Badai terbentuk karena adanya perbedaan tekanan udara yang besar dalam 
+        suatu wilayah sehingga menimbulkan aliran angin kuat dan gangguan cuaca.
+      </p>
+    </div>
+
+  </div>
+</section>
 
 
 
