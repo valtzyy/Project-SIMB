@@ -1,3 +1,35 @@
+<?php include "konek.php";
+
+// ambil data statistik awal
+$q = mysqli_query($conn, "SELECT * FROM statistik_umum ORDER BY id DESC LIMIT 1");
+$stat = mysqli_fetch_assoc($q);
+
+// grafik tahunan
+$q2 = mysqli_query($conn, "SELECT tahun, jumlah_topan FROM frekuensi_tahunan ORDER BY tahun");
+$years = [];
+$counts = [];
+
+while($row=mysqli_fetch_assoc($q2)){
+    $years[] = $row['tahun'];
+    $counts[] = $row['jumlah_topan'];
+}
+
+// history table
+$history = mysqli_query($conn, "SELECT * FROM riwayat_topan");
+
+// kategori donut
+$q3 = mysqli_query($conn, "SELECT kategori, jumlah FROM kategori_topan");
+$donutLabels = [];
+$donutData = [];
+
+while($k=mysqli_fetch_assoc($q3)){
+    $donutLabels[] = $k['kategori'];
+    $donutData[] = $k['jumlah'];
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -158,173 +190,37 @@
 
   <script>
   // ========== SAMPLE DATA ==========
-  const data = {
-    totalStorms: 128,
-    deaths: 5320,
-    damagedInfra: 23810,
-    lossesUSD: 8.2e9,
-    yearly: { // example: years 2014..2023
-      years: [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023],
-      counts: [9,11,14,12,20,10,13,15,16,18]
-    },
-    categoryDistribution: {
-      labels:['Category 1','Category 2','Category 3+'],
-      values:[58,40,30]
-    },
-    history:[
-      {name:'Haiyan', year:2013, cat:'5', impact:'6,300 korban'},
-      {name:'Mangkhut', year:2018, cat:'5', impact:'$3.7B'},
-      {name:'Bopha', year:2012, cat:'5', impact:'1,901 korban'},
-      {name:'Example A', year:2020, cat:'3', impact:'Kerusakan infrastruktur'}
-    ],
-    topRegions:['Region A','Region B','Region C']
-  };
-
-  // ========== COUNT-UP SIMPLE ==========
-  function animateCount(id, start, end, duration=1400, prefix='', formatter) {
-    const el = document.getElementById(id);
-    if(!el) return;
-    const startTs = performance.now();
-    const step = (ts) => {
-      const progress = Math.min((ts - startTs) / duration, 1);
-      const value = Math.floor(start + (end - start) * easeOutCubic(progress));
-      el.textContent = prefix + (formatter ? formatter(value) : value.toLocaleString());
-      if(progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
+ const data = {
+  totalStorms: <?= $stat['total_topan'] ?>,
+  deaths: <?= $stat['korban_jiwa'] ?>,
+  damagedInfra: <?= $stat['infrastruktur_rusak'] ?>,
+  lossesUSD: <?= $stat['kerugian_usd'] ?>,
+  yearly: {
+    years: <?= json_encode($years) ?>,
+    counts: <?= json_encode($counts) ?>
+  },
+  categoryDistribution: {
+      labels: <?= json_encode($donutLabels) ?>,
+      values: <?= json_encode($donutData) ?>
   }
-  function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
-
-  // initialize counts
-  animateCount('count-storms', 0, data.totalStorms, 1200);
-  animateCount('count-deaths', 0, data.deaths, 1400);
-  animateCount('count-damage', 0, data.damagedInfra, 1400);
-  animateCount('count-loss', 0, data.lossesUSD, 1500, '$', v => (v/1e9).toFixed(1) + 'B');
-
-  // small-stats
-  document.getElementById('avg-per-year').textContent = (data.totalStorms / data.yearly.years.length).toFixed(1) + ' topan per tahun';
-  document.getElementById('top-regions').textContent = data.topRegions.join(', ');
-
-  // history table
-  const tbody = document.getElementById('history-body');
-  data.history.forEach(row => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${row.name}</td><td>${row.year}</td><td>${row.cat}</td><td>${row.impact}</td>`;
-    tbody.appendChild(tr);
-  });
-
-  // ========== Chart.js - Line (frequency) ==========
-  const lineCtx = document.getElementById('chartLine').getContext('2d');
-  const lineChart = new Chart(lineCtx, {
-    type: 'line',
-    data: {
-      labels: data.yearly.years,
-      datasets: [{
-        label: 'Jumlah Topan',
-        data: data.yearly.counts,
-        borderColor: '#1f6fa8',
-        backgroundColor: gradientLine(lineCtx, '#1f6fa8'),
-        fill: true,
-        tension: 0.35,
-        pointRadius: 4,
-        pointBackgroundColor: '#fff',
-        pointBorderColor: '#1f6fa8',
-      }]
+};
+const historyData = [
+  <?php while($row=mysqli_fetch_assoc($history)): ?>
+    {
+      name: "<?= $row['nama'] ?>",
+      year: <?= $row['tahun'] ?>,
+      category: "<?= $row['kategori'] ?>",
+      impact: "<?= $row['dampak'] ?>"
     },
-    options: {
-      responsive:true,
-      maintainAspectRatio:false,
-      plugins:{
-        legend:{display:false},
-        tooltip:{mode:'index', intersect:false}
-      },
-      scales:{
-        x:{grid:{display:false}},
-        y:{beginAtZero:true, grid:{color:'#f1f5f9'}}
-      }
-    }
-  });
+  <?php endwhile; ?>
+];
+<footer>
+  &copy; 2025 SIMBAT – Sistem Informasi Manajemen Bencana Topan. Semua hak dilindungi.
+</footer>
 
-  // helper gradient
-  function gradientLine(ctx, hex){
-    const gradient = ctx.createLinearGradient(0,0,0,300);
-    gradient.addColorStop(0, hex + '40');
-    gradient.addColorStop(1, 'rgba(255,255,255,0)');
-    return gradient;
-  }
-
-  // ========== Chart.js - Donut (distribution) ==========
-  const donutCtx = document.getElementById('chartDonut').getContext('2d');
-  const donutChart = new Chart(donutCtx, {
-    type:'doughnut',
-    data:{
-      labels: data.categoryDistribution.labels,
-      datasets:[{
-        data: data.categoryDistribution.values,
-        backgroundColor:['#2b8cc4','#67b0e1','#cfe9fb'],
-        hoverOffset:8,
-        borderWidth:0
-      }]
-    },
-    options:{
-      responsive:true,
-      maintainAspectRatio:false,
-      plugins:{legend:{position:'bottom'}}
-    }
-  });
-
-  // ========== Leaflet map ==========
-  const map = L.map('map', {zoomControl:false}).setView([0.0, 120.0], 3); // center Indonesia-area
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  // sample markers (replace with your real data)
-  const sampleLocations = [
-    {lat:-6.2, lng:106.8, title:'Jakarta', info:'Topan ringan tercatat 2020'},
-    {lat:14.6, lng:121.0, title:'Philippines', info:'Topan besar 2013: Haiyan'},
-    {lat:15.5, lng:120.9, title:'Region B', info:'Banyak dampak banjir'}
-  ];
-  sampleLocations.forEach(loc=>{
-    const m = L.circleMarker([loc.lat, loc.lng], {radius:8, color:'#ff6b6b', fill:true, fillOpacity:0.7}).addTo(map);
-    m.bindPopup(`<strong>${loc.title}</strong><br>${loc.info}`);
-  });
-
-  // fit bounds
-  const group = L.featureGroup(sampleLocations.map(l=>L.marker([l.lat,l.lng])));
-  if(group.getLayers().length) map.fitBounds(group.getBounds().pad(0.6));
-
-  // small UX: animate charts on load (fade-in)
-  document.querySelectorAll('.fade-up').forEach((el,i)=> el.style.animationDelay = (i*120) + 'ms');
-
-
-    //DROPDOWN 
-    const dropdownBtn = document.querySelector('.dropdown-btn');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-
-    dropdownBtn.addEventListener('click', () => {
-        dropdownMenu.style.display =
-            dropdownMenu.style.display === "block" ? "none" : "block";
-    });
-
-    // Klik di luar → tutup
-    document.addEventListener('click', function(e){
-        if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
-            dropdownMenu.style.display = "none";
-        }
-    });
-
-  </script>
-</body>
-</html>
-
-
-
-  
-  <!-- <footer>
-    &copy; 2025 SIMBAT – Sistem Informasi Manajemen Bencana Topan. Semua hak dilindungi.
-  </footer>
-   -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="statistik.js"></script>
 
 </body>
 </html>
