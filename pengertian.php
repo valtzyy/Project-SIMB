@@ -62,30 +62,73 @@
 
 
     <!-- KONTENN -->
-  <section class="section-kontak" id="kontak">
-  <div class="kontak-inner">
+    <!-- KONTENN -->
+<div class="container">
+  <h2 class="section-title">Mengenal Bencana Angin di Indonesia</h2>
+  <p class="section-sub">
+    Bencana angin bukan sekadar hembusan kencang yang membuat pepohonan bergoyang.
+    Dalam kondisi tertentu, angin dapat berubah menjadi ancaman serius yang merusak rumah,
+    infrastruktur, hingga mengganggu keselamatan jiwa. Berikut tiga bentuk bencana angin
+    yang paling sering ditemui dan perlu kita waspadai bersama.
+  </p>
 
-    <div class="definition-card">
-      <h2>Definisi Bencana Angin</h2>
+  <div class="card-grid">
+    <div class="m-card">
+      <h3>🌬️ Bencana Angin</h3>
       <p>
-        Bencana angin adalah peristiwa hidrometeorologis berupa angin kencang yang memiliki kecepatan sangat tinggi 
-        dan dapat menyebabkan kerusakan besar pada bangunan, tumbuhan serta membahayakan keselamatan manusia. 
-        Angin ini biasanya terjadi karena adanya tekanan udara yang membentuk pusaran dalam sistem cuaca, sering 
-        terjadi di masa peralihan musim atau di wilayah tropis tertentu.
+        Bencana angin adalah kejadian alam ketika hembusan angin bertiup dengan kecepatan
+        tinggi dan berpotensi menimbulkan kerusakan di permukaan bumi. Angin kencang ini
+        biasanya muncul akibat perbedaan tekanan udara dan perubahan sistem cuaca dalam
+        skala tertentu. Meski tidak selalu terlihat mengerikan, bencana angin mampu
+        merobohkan bangunan ringan, merusak atap rumah, hingga mengganggu jaringan listrik
+        dan komunikasi.
       </p>
     </div>
-  </section>
-      <h2>Definisi Badai</h2>
+
+    <div class="m-card">
+      <h3>🌪️ Puting Beliung</h3>
       <p>
-        Secara ilmiah, badai (storm dalam bahasa Inggris, Latin modern: tempestas) adalah fenomena atmosfer yang 
-        ditandai dengan kondisi cuaca ekstrem berupa hembusan angin kencang, curah hujan deras, petir, salju, atau 
-        kombinasi dari unsur-unsur tersebut. Badai terbentuk karena adanya perbedaan tekanan udara yang besar dalam 
-        suatu wilayah sehingga menimbulkan aliran angin kuat dan gangguan cuaca.
+        Puting beliung adalah angin kencang yang berputar dengan pusat tekanan sangat rendah,
+        bergerak secara lokal dan berlangsung singkat. Fenomena ini sering muncul saat cuaca
+        panas disusul awan gelap dan hujan deras. Dalam hitungan menit, puting beliung bisa
+        merobohkan rumah, menumbangkan pohon, serta mengakibatkan kerusakan terfokus pada
+        satu jalur tertentu. Karena datangnya cepat dan sulit diprediksi, kewaspadaan dan
+        respon yang sigap menjadi kunci mengurangi dampaknya.
       </p>
     </div>
 
+    <div class="m-card">
+      <h3>🌊 Badai</h3>
+      <p>
+        Badai adalah sistem cuaca berskala lebih luas yang membawa angin kencang, hujan
+        lebat, petir, dan kadang disertai gelombang tinggi di wilayah pesisir. Badai
+        terbentuk dari gangguan atmosfer yang kuat dan dapat berlangsung lebih lama
+        dibandingkan puting beliung. Dampaknya tidak hanya dirasakan di daratan, tetapi
+        juga di laut, seperti terhambatnya jalur pelayaran, rusaknya fasilitas pantai,
+        serta meningkatnya risiko banjir dan tanah longsor di kawasan tertentu.
+      </p>
+    </div>
+    <div class="m-card">
+      <h3>🌪️ Angin Topan</h3>
+      <p>
+          Angin topan adalah badai besar yang
+          memiliki sistem angin kencang berbentuk
+          melingkar atau spiral. Angin topan ini
+          biasanya memiliki diameter hingga
+          ratusan kilometer. Angin ini berputar di
+          sekitar wilayah dengan tekanan atmosfer
+          yang rendah. Angin topan adalah
+          fenomena cuaca yang bisa menimbulkan
+          kerusakan parah di wilayah yang
+          dilewatinya. Angin yang berhembus
+          dengan kecepatan luar biasa ini dapat
+          mengangkat, menerbangkan, dan
+          merubuhkan objek apa pun yang ada di
+          jalurnya.
+      </p>
+    </div>
   </div>
-</section>
+</div>
 
 
 
