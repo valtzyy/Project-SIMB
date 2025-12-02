@@ -74,7 +74,7 @@
     <!-- ===== DEPRESI TROPIS ===== -->
     <div class="intensity-card">
         <div class="icon-area">
-            <img src="icons/depresi.png" alt="Depresi Tropis">
+            <!-- <img src="icons/depresi.png" alt="Depresi Tropis"> -->
         </div>
 
         <div class="info-area">
@@ -112,7 +112,7 @@
     <!-- ===== BADAI TROPIS ===== -->
     <div class="intensity-card">
         <div class="icon-area">
-            <img src="icons/badai.png" alt="Badai Tropis">
+            <!-- <img src="icons/badai.png" alt="Badai Tropis"> -->
         </div>
 
         <div class="info-area">
@@ -150,7 +150,7 @@
     <!-- ===== TOPAN KATEGORI 1 ===== -->
     <div class="intensity-card">
         <div class="icon-area">
-            <img src="icons/kat1.png" alt="Kategori 1">
+            <!-- <img src="icons/kat1.png" alt="Kategori 1"> -->
         </div>
 
         <div class="info-area">
@@ -188,7 +188,7 @@
     <!-- ===== TOPAN KATEGORI 2 ===== -->
     <div class="intensity-card">
         <div class="icon-area">
-            <img src="icons/kat2.png" alt="Kategori 2">
+            <!-- <img src="icons/kat2.png" alt="Kategori 2"> -->
         </div>
 
         <div class="info-area">
@@ -226,7 +226,7 @@
     <!-- ===== TOPAN KATEGORI 3 ===== -->
     <div class="intensity-card">
         <div class="icon-area">
-            <img src="icons/kat3.png" alt="Kategori 3">
+            <!-- <img src="icons/kat3.png" alt="Kategori 3"> -->
         </div>
 
         <div class="info-area">
@@ -264,7 +264,7 @@
     <!-- ===== TOPAN KATEGORI 4 ===== -->
     <div class="intensity-card">
         <div class="icon-area">
-            <img src="icons/kat4.png" alt="Kategori 4">
+            <!-- <img src="icons/kat4.png" alt="Kategori 4"> -->
         </div>
 
         <div class="info-area">
@@ -302,7 +302,7 @@
     <!-- ===== TOPAN KATEGORI 5 ===== -->
     <div class="intensity-card">
         <div class="icon-area">
-            <img src="icons/kat5.png" alt="Kategori 5">
+            <!-- <img src="icons/kat5.png" alt="Kategori 5"> -->
         </div>
 
         <div class="info-area">
