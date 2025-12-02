@@ -233,7 +233,6 @@
     </div>
 </div>
 
-<!-- ================= SESUDAH BADAI ================= -->
 <div class="section-wrapper tab-content" id="sesudah">
     <h2 class="section-title">Tindakan Setelah Badai</h2>
     <p class="section-subtitle">
