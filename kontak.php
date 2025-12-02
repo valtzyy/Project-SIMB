@@ -1,7 +1,4 @@
 <?php
-// kontak.php
-// Halaman untuk melaporkan bencana secara sederhana.
-// Menyimpan laporan ke file "laporan.txt" (append) dan menampilkan pesan sukses.
 
 $save_file = __DIR__ . '/laporan.txt';
 $success = '';

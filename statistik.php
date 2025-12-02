@@ -1,16 +1,11 @@
 <?php 
-// PASTIKAN FILE konek.php ADA DAN KONEKSI DATABASE BERHASIL
 include "konek.php";
 
-// Ambil data statistik awal
-// Tambahkan pengecekan error untuk debug koneksi/query
 $q = mysqli_query($conn, "SELECT * FROM statistik_umum ORDER BY id DESC LIMIT 1") 
     or die("Error query statistik_umum: " . mysqli_error($conn));
 
-// Fetch data, gunakan nilai default 0 jika tidak ada baris ditemukan
 $stat = mysqli_fetch_assoc($q);
 if (!$stat) {
-    // Jika tabel kosong, set nilai default agar JS tidak error
     $stat = [
         'total_topan' => 0, 
         'korban_jiwa' => 0, 
@@ -20,24 +15,20 @@ if (!$stat) {
 }
 
 
-// Grafik tahunan
 $q2 = mysqli_query($conn, "SELECT tahun, jumlah_topan FROM frekuensi_tahunan ORDER BY tahun")
     or die("Error query frekuensi_tahunan: " . mysqli_error($conn));
 $years = [];
 $counts = [];
 
 while($row=mysqli_fetch_assoc($q2)){
-    // Pastikan data adalah integer, atau set 0 jika null/kosong
     $years[] = (int)$row['tahun']; 
     $counts[] = (int)$row['jumlah_topan'];
 }
 
-// History table
 $history = mysqli_query($conn, "SELECT * FROM riwayat_topan")
     or die("Error query riwayat_topan: " . mysqli_error($conn));
 
 
-// Kategori donut
 $q3 = mysqli_query($conn, "SELECT kategori, jumlah FROM kategori_topan")
     or die("Error query kategori_topan: " . mysqli_error($conn));
 $donutLabels = [];
@@ -45,11 +36,9 @@ $donutData = [];
 
 while($k=mysqli_fetch_assoc($q3)){
     $donutLabels[] = $k['kategori'];
-    // Pastikan data adalah integer, atau set 0 jika null/kosong
     $donutData[] = (int)$k['jumlah'];
 }
 
-// Rewind history result set untuk digunakan di dalam array JS
 mysqli_data_seek($history, 0); 
 $historyDataArray = [];
 while($row=mysqli_fetch_assoc($history)){
@@ -210,11 +199,9 @@ while($row=mysqli_fetch_assoc($history)){
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <script>
-  // ==========================================================
-  // 1. DATA PHP DIKONVERSI KE JAVASCRIPT
-  // ==========================================================
+ 
   const data = {
-   totalStorms: <?= $stat['total_topan'] ?? 0 ?>, // PHP Null Coalescing, untuk amankan jika data kosong
+   totalStorms: <?= $stat['total_topan'] ?? 0 ?>, 
    deaths: <?= $stat['korban_jiwa'] ?? 0 ?>,
    damagedInfra: <?= $stat['infrastruktur_rusak'] ?? 0 ?>,
    lossesUSD: <?= $stat['kerugian_usd'] ?? 0 ?>,
@@ -231,21 +218,15 @@ while($row=mysqli_fetch_assoc($history)){
   const historyData = <?= json_encode($historyDataArray) ?>;
 
 
-
-  // Fungsi untuk memformat angka dengan pemisah ribuan (misal: 1.234)
   function formatNumber(num) {
       if (typeof num === 'undefined' || num === null) return '0';
-      return parseInt(num).toLocaleString('id-ID'); // Menggunakan format lokal Indonesia
-  }
-
+      return parseInt(num).toLocaleString('id-ID'); 
   document.addEventListener('DOMContentLoaded', () => {
-    // A. Mengisi Kartu Statistik Utama
     document.getElementById('count-storms').textContent = formatNumber(data.totalStorms);
     document.getElementById('count-deaths').textContent = formatNumber(data.deaths);
     document.getElementById('count-damage').textContent = formatNumber(data.damagedInfra);
     document.getElementById('count-loss').textContent = '$' + formatNumber(data.lossesUSD); 
 
-    // B. Mengisi Tabel Riwayat Topan
     const historyBody = document.getElementById('history-body');
     historyData.forEach(item => {
         const row = historyBody.insertRow();
@@ -255,7 +236,6 @@ while($row=mysqli_fetch_assoc($history)){
         row.insertCell().textContent = item.impact;
     });
 
-    // C. Mengisi Rata-rata Topan / Tahun
     if (data.yearly.years.length > 0) {
         const sumCounts = data.yearly.counts.reduce((a, b) => a + b, 0);
         const totalYears = data.yearly.years.length;
@@ -263,8 +243,6 @@ while($row=mysqli_fetch_assoc($history)){
         document.getElementById('avg-per-year').textContent = avgPerYear;
     }
 
-    // D. Inisialisasi Chart.js (Line Chart)
-    // --- Pastikan Anda memiliki kode inisialisasi chart di sini atau di statistik.js ---
     const ctxLine = document.getElementById('chartLine').getContext('2d');
     new Chart(ctxLine, {
         type: 'line',
@@ -288,7 +266,6 @@ while($row=mysqli_fetch_assoc($history)){
         }
     });
 
-    // E. Inisialisasi Chart.js (Donut Chart)
     const ctxDonut = document.getElementById('chartDonut').getContext('2d');
     new Chart(ctxDonut, {
         type: 'doughnut',
@@ -319,21 +296,20 @@ while($row=mysqli_fetch_assoc($history)){
         }
     });
     
-    // F. Inisialisasi Leaflet Map
     const map = L.map('map').setView([-2.5, 118.5], 5); // Lokasi di Indonesia
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
-    // Contoh Marker (Anda perlu data koordinat nyata)
-    L.marker([-6.2088, 106.8456]).addTo(map) // Jakarta
+   
+    L.marker([-6.2088, 106.8456]).addTo(map) 
         .bindPopup('Topan A, Kerusakan Tinggi');
     
-    L.marker([-7.2575, 112.7521]).addTo(map) // Surabaya
+    L.marker([-7.2575, 112.7521]).addTo(map) 
         .bindPopup('Topan B, Korban Jiwa');
     
-    L.marker([0.7893, 113.9213]).addTo(map) // Kalimantan
+    L.marker([0.7893, 113.9213]).addTo(map)
         .bindPopup('Topan C, Banjir Bandang');
 
   });
