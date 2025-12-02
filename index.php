@@ -50,7 +50,7 @@
   <!-- BERANDA -->
   <section class="content" id="home">
     <div class="hero-container fade-in">
-      <h1>Sistem Informasi Bencana Topan Nasional</h1>
+      <h1>Sistem Informasi Bencana Topan</h1>
       <p>
         Pemantauan topan real-time, edukasi bencana, statistik nasional,
         serta panduan keselamatan nasional yang dapat diakses kapan saja.
@@ -155,32 +155,39 @@
   </section>
 
 
-  <!-- KONTAK -->
+    <!-- KONTAK (Diperbarui: Tambah info BMKG & pemantauan siklon) -->
   <section class="section-kontak" id="kontak">
     <div class="kontak-inner">
       <div>
         <h2>Kontak Darurat & Informasi</h2>
         <p>
-          Jika Anda berada di wilayah terdampak topan, segera hubungi layanan darurat setempat atau
-          BPBD untuk mendapatkan bantuan. Periksa selalu informasi resmi dari lembaga pemerintah.
+          Jika Anda berada di wilayah terdampak topan, segera hubungi layanan darurat setempat atau BPBD.
+          Untuk pemantauan siklon tropis dan informasi teknis terkini, cek laman Siklon Tropis BMKG
+          (informasi real-time dan peringatan dari TCWC Jakarta). <a href="https://www.bmkg.go.id/cuaca/siklon-tropis" target="_blank" rel="noopener">Kunjungi Halaman Siklon Tropis BMKG</a>
         </p>
+
         <ul class="kontak-list">
-          <li><b>Call Center Darurat:</b> 112 / 117 (BPBD)</li>
-          <li><b>Info Cuaca Resmi:</b> Website & kanal resmi BMKG</li>
-          <li><b>Posko Bencana:</b> Dikelola oleh BPBD, BNPB, dan pemerintah daerah</li>
+          <li><b>Call Center Darurat (BMKG):</b> 196 / (021) 196 — hubungi untuk konfirmasi informasi cuaca & peringatan resmi.</li>
+          <li><b>Informasi Siklon & Pemantauan:</b> Tropical Cyclone Warning Centre (TCWC) Jakarta memantau siklon tropis di kawasan sekitar Indonesia secara terus-menerus; untuk peta & posisi siklon, lihat portal TCWC/BMKG.</li>
+          <li><b>Posko Bencana:</b> Dikelola oleh BPBD, BNPB, dan pemerintah daerah — ikuti arahan evakuasi lokal.</li>
         </ul>
+
+        <p class="small-note">
+          Catatan: tautan BMKG membuka halaman eksternal. Untuk keputusan keselamatan (evakuasi/penyelamatan), selalu ikuti instruksi resmi dari BPBD/BNPB setempat.
+        </p>
       </div>
 
       <div class="kontak-card">
-        <b>Catatan:</b>
+        <b>Pelaporan Sederhana di Website Ini</b>
         <p>
-          Simbat merupakan sistem informasi pendukung untuk edukasi dan pemantauan bencana topan.
-          Untuk keputusan evakuasi dan kebijakan resmi, selalu ikuti arahan pemerintah dan instansi
-          berwenang.
+          Anda juga dapat melaporkan kejadian bencana kecil melalui form Kontak pada situs ini. 
+          Laporan ini bukannya pengganti panggilan darurat—gunakan nomor darurat jika kondisi mengancam jiwa.
         </p>
+        <p style="margin-top:8px;"><a href="kontak.php" class="read-more-btn">Laporkan Sekarang</a></p>
       </div>
     </div>
   </section>
+
 
   <footer>
     &copy; 2025 SIMBAT – Sistem Informasi Manajemen Bencana Topan. Semua hak dilindungi.
