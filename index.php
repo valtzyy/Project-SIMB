@@ -42,7 +42,7 @@
           </li>
             <li><a href="statistik.php">Statistik</a></li>
             <li><a href="mitigasi.php">Mitigasi</a></li>
-            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="kontak.php">Kontak</a></li>
         </ul>
       </div>
   </nav>

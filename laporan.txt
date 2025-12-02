@@ -1,0 +1,12 @@
+WAKTU: 2025-12-02 00:38:14
+NAMA: Novaldo
+JENIS: Badai
+LOKASI: Bantul
+KETERANGAN: badai
+---
+WAKTU: 2025-12-02 01:31:50
+NAMA: Udin
+JENIS: Badai
+LOKASI: Nganjuk
+KETERANGAN: Korban parah, daerah hancur
+---
